@@ -25,6 +25,7 @@ describe("SpeechPundit", function()
     it("Invalid test(existing user) for sign up",function()
     {
         // cy.wait(2000)
+        // cy.get('[routerlink="/signup"]').click()
         cy.get('#email').type("sameera@applines.com") //email
         // cy.wait(2000)
         cy.get('#firstName').type("sameera") //firstname
@@ -44,7 +45,7 @@ describe("SpeechPundit", function()
         // cy.get('#email').should('be.enabled').type("me1e@applines.com") //email
         // cy.get('#firstName').should('be.enabled').type("sameera") //firstname
         // cy.get('#lastName').should('be.enabled').type("SK") //lastname
-        cy.get('#email').type("sameera+7@applines.com") //email
+        cy.get('#email').type("sameera+8@applines.com") //email
         
         cy.get('#firstName').type("sameera") //firstname
         // cy.get('#lastName').type("SK") //lastname
@@ -58,6 +59,34 @@ describe("SpeechPundit", function()
         // cy.wait(2000)
         // cy.get('.btn').click()
         
+
+    })
+
+
+    it("wrong password", function()
+    {
+        cy.visit("https://speechpundit.com/#/signin")
+        cy.get('#email').type("sameera@applines.com")
+
+        cy.get('#password').type("root1234")
+        cy.get('.btn').click()
+        cy.wait(1000)
+
+
+
+    })
+
+
+    it("existing user log in", function()
+    {
+        cy.visit("https://speechpundit.com/#/signin")
+        cy.get('#email').type("sameera@applines.com")
+
+        cy.get('#password').type("root12345")
+        cy.get('.btn').click()
+        cy.wait(1000)
+
+
 
     })
 
@@ -107,6 +136,9 @@ describe("SpeechPundit", function()
             cy.get('#email').type("sameera@applines.com")
             cy.get('#password').type("root12345")
             cy.get('.btn').click()
+            cy.get('#menu-2').click()
+            // cy.get('.fas fa-user').click()
+            // cy.get('.dropdown menu').click()
 
 
         })
