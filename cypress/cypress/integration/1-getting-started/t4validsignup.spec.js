@@ -12,7 +12,7 @@ describe("SpeechPundit", function()
         // cy.get('#email').should('be.enabled').type("me1e@applines.com") //email
         // cy.get('#firstName').should('be.enabled').type("sameera") //firstname
         // cy.get('#lastName').should('be.enabled').type("SK") //lastname
-        cy.get('#email').type("sameera+9@applines.com") //email
+        cy.get('#email').type("sameera+44@applines.com") //email
         
         cy.get('#firstName').type("sameera") //firstname
         // cy.get('#lastName').type("SK") //lastname

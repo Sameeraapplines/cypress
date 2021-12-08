@@ -1,8 +1,32 @@
 ///<reference types= "cypress"/>
 
 describe("SpeechPundit", function()
-{
-    it("visit the website", function(){
+
+{           
+    it("Website & Content", function(){
+        cy.visit("https://speechpundit.com/#/")
+        cy.get('[routerlink="/signup"]').click() 
+        cy.visit("https://speechpundit.com/#/") // try back button instead
+        cy.get('[routerlink="/trynow"]').click()
+        cy.get('.p-button-label').click() //pavis class
+        cy.get('.btn-info').click()
+        
+        })
+
+
+    it("Navigation", function(){
+        cy.visit("https://speechpundit.com/#/")
+        cy.get('.active').click()
+        cy.get(':nth-child(3) > a').click()
+        
+        cy.get(':nth-child(4) > a').click()
+    })
+
+
+
+
+
+    it("Signup testcases", function(){
         cy.visit("https://speechpundit.com/#/")
         cy.get('[routerlink="/signup"]').click()
     })
@@ -45,7 +69,7 @@ describe("SpeechPundit", function()
         // cy.get('#email').should('be.enabled').type("me1e@applines.com") //email
         // cy.get('#firstName').should('be.enabled').type("sameera") //firstname
         // cy.get('#lastName').should('be.enabled').type("SK") //lastname
-        cy.get('#email').type("sameera+8@applines.com") //email
+        cy.get('#email').type("sameera+34@applines.com") //email
         
         cy.get('#firstName').type("sameera") //firstname
         // cy.get('#lastName').type("SK") //lastname
@@ -61,6 +85,16 @@ describe("SpeechPundit", function()
         
 
     })
+    // it("billing", function(){
+
+    //         cy.visit("https://speechpundit.com/#/billing/pricing/all")
+    //         // cy.get(':nth-child(2) > app-plan-item > .card > .pb-6 > .btn').click()
+    //         // cy.get('.list-group > :nth-child(5)').click()
+    //         // cy.get('.btn-primary btn').click()
+    //         cy.get(':nth-child(2) > app-plan-item > .card > .pb-6 > .btn').click()
+    //         cy.get('."btn-primary btn btn-block ng-star-inserted" xpath="1"').click()
+
+    // })
 
 
     it("wrong password", function()

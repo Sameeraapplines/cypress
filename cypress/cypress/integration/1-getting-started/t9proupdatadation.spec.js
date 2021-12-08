@@ -10,7 +10,7 @@ it("profile updation",function()
     // cy.get('.dropdown menu').click()
     // cy.get('.dropdown-item').click({multiple:true})
     // cy.get('.dropdown-item').and({force:true}).and({multiple:true})
-    cy.get('.dropdown-item').should({force:true}).should({multiple:true})
+    // cy.get('.dropdown-item').should({force:true}).should({multiple:true})
 
 
 
