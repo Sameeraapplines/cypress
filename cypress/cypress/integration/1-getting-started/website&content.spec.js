@@ -1,28 +1,5 @@
 ///<reference types= "cypress"/>
 
-// describe("SpeechPundit", function()
-
-// {           
-//     it.only("Website & Content", function(){ // verify avaialability of website and content  
-//         cy.visit("https://speechpundit.com/#/")
-//         cy.contains('Sign Up')
-//         cy.contains('Sign in')
-//         cy.contains('Try Now')
-//         cy.contains("Sign Up for Pavi's Class")
-//         cy.contains('Why choose us')
-//         cy.contains('Program Video')
-//         cy.contains('Program Overview')
-//         // cy.contains('Signer Up')
-       
-        
-//         })
-
-
-    
-
-
-// })
-
 
 describe('Website content Test', () => {
     it('verifies availability and content of landing page', () => {
