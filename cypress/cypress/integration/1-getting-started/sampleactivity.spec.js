@@ -1,12 +1,14 @@
-///<reference types= "cypress"/>
 describe('Activity page', () => {
     it('Verifies availability and content of Activity page', () => {
-        // cy.visit("https://speechpundit.com/#/")
-        // cy.contains('Sign in').click()
-        cy.visit("https://www.speechpundit.com/#/signin")
 
-        cy.contains('Email').type('sameera@applines.com')
-        cy.contains('Password').type("root12345")
+        const email = Cypress.env('email')
+        const password1 = Cypress.env('password1')
+
+        cy.visit("https://www.speechpundit.com/#/signin")
+        // cy.contains('Sign in').click()
+
+        cy.contains('Email').type(email)
+        cy.contains('Password').type(password1)
         cy.get('form').submit()
         cy.contains('Activity').click()
          cy.contains('Summary')
